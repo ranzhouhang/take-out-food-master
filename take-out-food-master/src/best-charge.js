@@ -1,4 +1,10 @@
-function bestCharge(selectedItems) {
+
+// const loadAllItems = require('../src/items.js');
+// const loadPromotions = require('../src/promotions.js');
+
+// module.exports =
+
+  function bestCharge(selectedItems) {
   let idname = [];
   let menuname = [];
   let smallresult = [];
@@ -76,3 +82,4 @@ function bestCharge(selectedItems) {
   resultlist = headList+bodyList+line+youhui+"总计："+result+"元"+"\n"+lastline;
   return  resultlist/*TODO*/;
 }
+// ;
