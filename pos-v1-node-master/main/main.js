@@ -1,5 +1,6 @@
 
 const loadAllItems = require('./datbase');
+const loadPromotions = require('./discount');
 
 module.exports = function main(inputs) {
 
@@ -33,7 +34,9 @@ module.exports = function main(inputs) {
             value.price = loadAllItems().find(item => item.barcode === value.id).price;
             value.name = loadAllItems().find(item => item.barcode === value.id).name;
             value.unit = loadAllItems().find(item => item.barcode === value.id).unit;
-            if(value.count%2>0){
+            let a = loadPromotions()[0].barcodes;
+
+            if((value.id === a[0]||a[1]||a[2])&&value.count%2>0){
                 value.discountsNum = value.count%2;
                 value.discountsPrice = value.count%2 * parseFloat(value.price,10);
             }
